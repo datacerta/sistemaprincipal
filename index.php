@@ -1,29 +1,28 @@
-<!DOCTYPE HTML>
-<html lang="pt-br">
-<head>
-	<meta charset="UTF-8">
-	<title>Agência Rino</title>
-	<style>
-		*{
-			margin: 0;
-			padding: 0;
-		}
-		.fundo{
-			background-image: url('background.jpg'); 
-			background-repeat: repeat;
-			text-align: center;
-			width: 100%;
-			height: 1000px;
-		}
+<?php
+/**
+ * Index
+ * -------------------------------------------------------------------------------------------
+ * @author Claudio Monteoliva
+ * @version 1.0
+ * @copyright 2015 Data Certa
+ */
+// seta variavel
+$prgTit = "Home";
 
-		
-	</style>
-</head>
-<body>
+// pega a configuracao
+require_once("inc/config.inc");
 
-<div class="fundo">
+// pega o HTML Header
+require_once("inc/header.inc");
+?>
 
-</div>
 
-</body>
-</html>
+
+
+
+
+ 
+<?php 
+// pega o HTML Footer 
+require_once("inc/footer.inc");
+?>
