@@ -1,0 +1,78 @@
+a {
+	text-decoration: none;
+	color: #00008B;
+
+}
+a:hover {
+    color: #000000; text-decoration: underline
+}
+.tabela {
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: #990000;
+}
+.tabela_bordas {
+	border-top-width: 1px;
+	border-top-style: solid;
+	border-top-color: #00008B;
+
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: #00008B;
+
+	border-right-width: 1px;
+	border-right-style: solid;
+	border-right-color: #00008B;
+	
+	border-left-width: 1px;
+	border-left-style: solid;
+	border-left-color: #00008B;
+}
+
+.arial11_b {
+	font-family: Arial, Helvetica;
+    font-size: 12px;
+    color: #00008B ;
+    font-weight: bold
+}
+
+table, a, th, input, select, td {
+	font-family: Lucida Sans;
+	font-size: 10px;
+	color: #00008B;
+}
+
+.tabelac {
+	border-top-width: 1px;
+	border-top-style: solid;
+	border-top-color: #00008B;
+
+}.tabelab {
+
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: #00008B;
+}
+.tabelaV {
+	border-right-width: 1px;
+	border-right-style: solid;
+	border-right-color: #00008B;
+
+}
+.hidden {
+		width: 0px;
+		border: 0px solid ;
+}
+
+.noborder {
+	border: 0px solid ;
+}
+
+.noborder_input {
+	font-size: 12px;
+	font-family: Arial, Helvetica;
+    color: #00008B;
+    text-align : right;
+    border: 0px solid;
+}
+

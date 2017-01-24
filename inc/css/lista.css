@@ -1,0 +1,53 @@
+/*
+ * CSS de Lista
+ */
+.lista {
+	width: 100% !important;
+	overflow-x: hidden;
+	overflow-y: auto;
+	margin: 0px 0px 20px 0px;
+}
+
+.lista .titulo { font-size: 20px; font-weight: 700; text-align: center; }
+
+.lista .campo {
+	background: #FFF; 
+	border: 1px solid #CCC;
+	padding: 6px;
+	color: #666;
+	font-size: 13px;
+	-webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+}
+
+.lista table { width: 100%; border: none; border-spacing: 0px; }
+.lista table th {
+	font-size: 12px;
+	font-weight: 700;
+	color: #FFF;
+	background: rgba(0,56,105,1);
+	text-align: center;
+	border-right: 1px solid #FFF;
+	padding: 8px;
+}
+.lista table td           { font-size: 12px; color: #333; padding: 4px; }
+.lista table td a         { font-size: 12px; text-decoration: none; color: rgba(0  ,56 ,105,1); font-weight: 700; }
+.lista table td a:visited {                  text-decoration: none; color: rgba(0  ,56 ,105,1); }
+.lista table td a:hover   {                  text-decoration: none; color: rgba(255,100,64 ,1); }
+
+.lista .divPaginacao {
+  background-color: #F6F6F6;
+  border: 1px solid #808080;
+  padding: 2px;
+  margin-top: 6px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+}
+.lista .divPaginacao .fonte   { font-size: 12px; color: #666; }
+.lista .divPaginacao .cfonte  { font-size: 14px; font-weight: 700; color: #990000; }
+.lista .divPaginacao table    { width: 100%; border: 0px; border-spacing: 0px; }
+.lista .divPaginacao table td { padding: 4px; }
+
+.zebra  { background-color: #DDD; }
