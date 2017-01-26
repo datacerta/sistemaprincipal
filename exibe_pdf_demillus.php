@@ -12,8 +12,11 @@ $qry10->executa($sql);
 $lotecaminho =  $qry10->data["numlotedigital"];
         //echo $sql."<br />";
         //die;
-
-$arquivo = "http://179.228.162.3:1010/imagem/".$lotecaminho."/".$idexterno.".pdf";
+if(reserved_ip(get_client_ip())){
+	$arquivo = "http://192.168.2.200:1010/imagem/".$lotecaminho."/".$idexterno.".pdf";
+}else{
+	$arquivo = "http://179.228.162.3:1010/imagem/".$lotecaminho."/".$idexterno.".pdf";
+}
 //echo $arquivo;
 //die;
 

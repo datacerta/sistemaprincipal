@@ -24,6 +24,49 @@ function CriaSessao($usuario, $cdlogin, $idtransp, $cdbase, $idcli,$dp){
     $_SESSION['IDDP'] = $dp;
 
 }
+
+function get_client_ip() {
+    $ipaddress = '';
+    if (getenv('HTTP_CLIENT_IP'))
+        $ipaddress = getenv('HTTP_CLIENT_IP');
+    else if(getenv('HTTP_X_FORWARDED_FOR'))
+        $ipaddress = getenv('HTTP_X_FORWARDED_FOR');
+    else if(getenv('HTTP_X_FORWARDED'))
+        $ipaddress = getenv('HTTP_X_FORWARDED');
+    else if(getenv('HTTP_FORWARDED_FOR'))
+        $ipaddress = getenv('HTTP_FORWARDED_FOR');
+    else if(getenv('HTTP_FORWARDED'))
+       $ipaddress = getenv('HTTP_FORWARDED');
+    else if(getenv('REMOTE_ADDR'))
+        $ipaddress = getenv('REMOTE_ADDR');
+    else
+        $ipaddress = 'UNKNOWN';
+    return $ipaddress;
+}
+
+function reserved_ip($ip)
+{
+    $reserved_ips = array( // not an exhaustive list
+    '167772160'  => 184549375,  /*    10.0.0.0 -  10.255.255.255 */
+    '3232235520' => 3232301055, /* 192.168.0.0 - 192.168.255.255 */
+    '2130706432' => 2147483647, /*   127.0.0.0 - 127.255.255.255 */
+    '2851995648' => 2852061183, /* 169.254.0.0 - 169.254.255.255 */
+    '2886729728' => 2887778303, /*  172.16.0.0 -  172.31.255.255 */
+    '3758096384' => 4026531839, /*   224.0.0.0 - 239.255.255.255 */
+    );
+
+    $ip_long = sprintf('%u', ip2long($ip));
+
+    foreach ($reserved_ips as $ip_start => $ip_end)
+    {
+        if (($ip_long >= $ip_start) && ($ip_long <= $ip_end))
+        {
+            return TRUE;
+        }
+    }
+    return FALSE;
+}
+
 //verifica sessão válida e retorna boolean
 function VerSessao(){
 	session_start();
