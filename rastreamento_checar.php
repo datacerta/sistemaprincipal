@@ -18,8 +18,18 @@ $sql = "SELECT num_campanha FROM tb_demillus_campanha WHERE data_coleta >= '".da
 $qry3->executa($sql);
 $campanha_atual = $qry3->data['num_campanha'];
 
-if(!empty($_GET['setores']) or !empty($_GET['listas']) or !empty($_GET['endereco'])){
-	if(!empty( $_GET['endereco'])){
+if(!empty($_GET['setores']) or !empty($_GET['listas']) or !empty($_GET['endereco']) or !empty($_GET['listara'])){
+	if(!empty($_GET['listara'])){
+		$listra = explode(",", $_GET['listara']);
+		foreach($listra as $ra){
+			$listwhere .= "'".$ra."',";
+		}
+		$listwhere = substr($listwhere, 0, -1);
+		$sql = "SELECT latitude, longitude
+			  FROM tb_demillus_revend
+			  WHERE id_revend IN ($listwhere)";
+	}
+	elseif(!empty( $_GET['endereco'])){
 		$sql = "SELECT latitude, longitude
 			  FROM tb_demillus_revend
 			  WHERE endereco LIKE '%".$_GET['endereco']."%' OR cep = '".$_GET['endereco']."'";
@@ -50,8 +60,20 @@ $map->center_lat=$la; // set latitude for center location
 $map->center_lng=$lo; // set langitude for center location
 $map->zoom=15;
 
-if(!empty($_GET['setores']) or !empty($_GET['listas']) or !empty($_GET['endereco'])){
-	if(!empty( $_GET['endereco'])){
+
+$listwhere= "";
+if(!empty($_GET['setores']) or !empty($_GET['listas']) or !empty($_GET['endereco']) or !empty($_GET['listara'])){
+	if(!empty($_GET['listara'])){
+		$listra = explode(",", $_GET['listara']);
+		foreach($listra as $ra){
+			$listwhere .= "'".$ra."',";
+		}
+		$listwhere = substr($listwhere, 0, -1);
+		$sql = "SELECT latitude, longitude
+			  FROM tb_demillus_revend
+			  WHERE id_revend IN ($listwhere)";
+	}
+	elseif(!empty( $_GET['endereco'])){
 		$sql = "SELECT *
 			  FROM tb_demillus_revend
 			  WHERE endereco LIKE '%".$_GET['endereco']."%' OR cep = '".$_GET['endereco']."'";
@@ -86,6 +108,7 @@ if(!empty($_GET['setores']) or !empty($_GET['listas']) or !empty($_GET['endereco
 		  WHERE atualiza_data IS NOT NULL AND id_setor = '".$setor."' 
 		  ORDER BY atualiza_data DESC LIMIT 1";
 }
+
 
 $qry->executa($sql);
 $qry2->executa($sqlb);

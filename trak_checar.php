@@ -148,6 +148,7 @@ function resizeWin() {
 		<div style="margin-bottom: 5px">
 			<label>Setor:</label><input type="text" name="setor" class="setores"/>
 			<label>Lista:</label><input type="text" name="lista" class="listas"/>
+			<label>Lista de Ra:</label><input type="text" name="listara" class="listara"/>
 		</div>
 		<div style="margin-bottom: 5px">
 			<label>RA:</label><input type="text" name="ra" class="ra"/>
@@ -264,7 +265,7 @@ function resizeWin() {
 ( function( $ ) {
 	$(function() {
 		$('.pesquisar').on('click',function(){
-			url = 'rastreamento_checar.php?setores='+$('.setores').val()+'&listas='+$('.listas').val()+'&ra='+$('.ra').val()+'&camp='+$('.camp').prop( "checked" )+'&endereco='+$('.endereco').val();
+			url = 'rastreamento_checar.php?listara='+$('.listara').val()+'&setores='+$('.setores').val()+'&listas='+$('.listas').val()+'&ra='+$('.ra').val()+'&camp='+$('.camp').prop( "checked" )+'&endereco='+$('.endereco').val();
 			window.open(url,'conteudoMapa');
 		});
 	});
