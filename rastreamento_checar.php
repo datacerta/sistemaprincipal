@@ -69,7 +69,7 @@ if(!empty($_GET['setores']) or !empty($_GET['listas']) or !empty($_GET['endereco
 			$listwhere .= "'".$ra."',";
 		}
 		$listwhere = substr($listwhere, 0, -1);
-		$sql = "SELECT latitude, longitude
+		$sql = "SELECT *
 			  FROM tb_demillus_revend
 			  WHERE id_revend IN ($listwhere)";
 	}
