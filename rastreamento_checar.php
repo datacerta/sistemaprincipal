@@ -22,7 +22,7 @@ if(!empty($_GET['setores']) or !empty($_GET['listas']) or !empty($_GET['endereco
 	if(!empty($_GET['listara'])){
 		$listra = explode(",", $_GET['listara']);
 		foreach($listra as $ra){
-			$listwhere .= "'".$ra."',";
+			$listwhere .= "'".trim($ra)."',";
 		}
 		$listwhere = substr($listwhere, 0, -1);
 		$sql = "SELECT latitude, longitude
@@ -66,7 +66,7 @@ if(!empty($_GET['setores']) or !empty($_GET['listas']) or !empty($_GET['endereco
 	if(!empty($_GET['listara'])){
 		$listra = explode(",", $_GET['listara']);
 		foreach($listra as $ra){
-			$listwhere .= "'".$ra."',";
+			$listwhere .= "'".trim($ra)."',";
 		}
 		$listwhere = substr($listwhere, 0, -1);
 		$sql = "SELECT *
@@ -162,12 +162,12 @@ for($i=0;$i<$qry->nrw;$i++)
 			."<textarea  name='obs' placeholder='obs'>".$qry->data['obs']."</textarea><button class='gravarobs'>GRAVAR OBS</button><input name='idrevend' type='hidden' class='idrevend' value='".$qry->data['id_revend']."'/> <br>"
 			."<b>COD. RA:</b> ".$qry->data['id_revend']."<br>"
 			."<b>NOME RA:</b> ".utf8_decode(trim($qry->data['nome_revend']))."<br>"
-			."<b>ENDERE&Ccedil;O:</b> ".utf8_decode(trim($qry->data['endereco']))."<br>"
+			."<b>ENDERE&Ccedil;O:</b><a target='_blank' href='https://www.google.com.br/maps/place/".urlencode(trim($qry->data['endereco']))."'> ".utf8_decode(trim($qry->data['endereco']))."</a><br>"
 			."<b>MUNICIPIO:</b> ".utf8_decode(trim($qry->data['cidade']))."<br>"
 			."<b>BAIRRO:</b> ".utf8_decode(trim($qry->data['bairro']))."<br>"
-			."<b>CEP:</b> ".$cep."<br>"
+			."<b>CEP:</b> <a target='_blank' href='https://www.google.com.br/maps/place/".$cep."'> ".$cep."</a><br>"
 			."<b>SETOR:</b> ".$qry->data['id_setor']."<br>"
-			."<b>LOCALIZA&Ccedil;&Atilde;O:</b> ".$qry->data['latitude'].", ".$qry->data['longitude']."<br>"
+			."<b>LOCALIZA&Ccedil;&Atilde;O:</b><a target='_blank' href='https://www.google.com.br/maps/place/".$qry->data['latitude'].", ".$qry->data['longitude']."'> ".$qry->data['latitude'].", ".$qry->data['longitude']."</a><br>"
 			."<b>Campanha:</b> ".$campanha_atual."/".$campanha;
 		
 		if($destaque){

@@ -148,7 +148,6 @@ function resizeWin() {
 		<div style="margin-bottom: 5px">
 			<label>Setor:</label><input type="text" name="setor" class="setores"/>
 			<label>Lista:</label><input type="text" name="lista" class="listas"/>
-			<label>Lista de Ra:</label><input type="text" name="listara" class="listara"/>
 		</div>
 		<div style="margin-bottom: 5px">
 			<label>RA:</label><input type="text" name="ra" class="ra"/>
@@ -157,6 +156,9 @@ function resizeWin() {
 		<div>
 			<button class="pesquisar">Pesquisar</button>
 		</div>
+	</div>
+	<div style="float:left">
+	<label>Lista de Ra:</label><textarea rows="4" name="listara" class="listara"></textarea>
 	</div>
 	<div style="float:right; margin-left: 10px">
 		<div style="font-weight: bold">
