@@ -44,7 +44,7 @@ class consulta {
         
 
             if(!$this->res = pg_query($sql))
-            			echo "<font color=red>DEBUG - ERRO $sql<br>";
+            			echo "<font color=red>DEBUG - ERRO $sql<br>".pg_last_error() ;
 
             
 
