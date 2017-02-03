@@ -66,7 +66,7 @@ setInterval("some()", 500);
 <title>..:: DATA CERTA ::..</title>
 </head>
 
-
+<a href="monitor_digitalizacao.php">trocar</a>
 	<table width=100% class = 'psdgraphics-com-table'>
 
 
