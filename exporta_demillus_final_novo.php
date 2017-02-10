@@ -44,7 +44,7 @@ $objdata = new consulta($con);
 			if(!empty($dataemissaoate)){
 				$sql .= "and dataemissao <= '$demissaoate'";
 			}
-            $sql .= " and datageraarquivo isnull  
+            $sql .= " 
                and primeiroenvelope = ".$setor
                
                ;
@@ -129,16 +129,17 @@ $objdata = new consulta($con);
                 //Tamanho do registro revendedora
                 $ttt = (8-strlen(abs($qry1->data["numconta"])));
                 
-                $obb = (49-strlen(trim($mot)));
+                //$obb = (49-strlen(trim($mot)));
                 $nff = (6-strlen(trim($qry1->data["numnotafiscal"])));
-				
+				$mot_pad = str_pad(utf8_decode(trim($mot)),50, " ", STR_PAD_RIGHT);
+
 				//fwrite é uma função do php que cria o arquivo
 				fwrite($fd,"02".$TipoBAixa. //"|". //fixo
 				str_pad($qry1->data["numnotafiscal"],9, "0", STR_PAD_LEFT).
                 $dat.
                // espaco_branco($ttt).
                 str_pad(trim($qry1->data["numconta"]),8, "0", STR_PAD_LEFT).
-                substr(str_pad(trim($mot),50, " ", STR_PAD_RIGHT),0,50).
+                substr($mot_pad,0,50).
                 str_pad($id_mot,2, " ", STR_PAD_LEFT).
                 str_pad($datare,8, " ", STR_PAD_RIGHT).
                 //$obb.'.'.
