@@ -44,7 +44,7 @@ class GOOGLE_API_3
 	var $instance=1;
 	function __construct()
 	{
-		echo '<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>';
+		echo '<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false&key=AIzaSyA1-Uw_4nTVytmn6n1TLVzoF7nROUVwY4c"></script>';
 	}
 	// Intialized google map scripts.
 	private function start()
