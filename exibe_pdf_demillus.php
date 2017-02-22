@@ -13,7 +13,7 @@ $lotecaminho =  $qry10->data["numlotedigital"];
         //echo $sql."<br />";
         //die;
 
-	$arquivo = "http://192.168.2.200:1010/imagem/".$lotecaminho."/".$idexterno.".pdf";
+	$arquivo = "http://179.228.162.3:1010/imagem/".$lotecaminho."/".$idexterno.".pdf";
 
 //echo $arquivo;
 //die;

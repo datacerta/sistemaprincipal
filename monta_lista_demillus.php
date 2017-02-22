@@ -316,7 +316,9 @@ if ($_POST['enviar']){
                   $sql2="";
 				 // $pseq = "";
                 if ($cblista==2) {
-				  	$sql2="update tbentrega set datapromessa='$data_promessa' WHERE idexterno='$codbars'";
+                	$datapromessa_format = explode("/", $data_promessa);
+                	$datapromessab = $datapromessa_format[2]."-".$datapromessa_format[1]."-".$datapromessa_format[0];
+				  	$sql2="update tbentrega set datapromessa='$datapromessab' WHERE idexterno='$codbars'";
 				    $qry9->executa($sql2);
                     
 								  
